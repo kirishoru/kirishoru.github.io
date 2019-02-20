@@ -1,4 +1,5 @@
 # <a name="id-0"></a> Foreword
+---
 
 My name is Baelic al Faar, and I am a Hero.
 
@@ -11,6 +12,7 @@ The stories of others deserve to be told, but if not by them, then why not by me
 I know not. I will simply have to try. Bear with me dear reader; this chronicle will tell the tale of a group of heroes that saved…everything.
 
 # <a name="id-1"></a> Beginnings and Endings
+---
 
 In order to begin, I must start at previous endings. As happens to many of my kind, I was abandoned as a babe. As a half-elf, my mixed features were a curse to both my parents. I have no memory of them and know nothing of their trials, but I must judge them harshly for their decision to abandon me near a humble human farming village. Though I have no memory of my parents, I have a great many in that village. A young couple took me in and showed me kindness. They raised me next to their own son. Taught me everything they knew and treated me in all ways as though I was their own flesh and blood. They taught me what it means to be a family.
 
@@ -24,7 +26,7 @@ She said that the village son of two races would soon find two paths before him.
 
 I shook my hands free of hers and quickly stepped back. Everyone tried to laugh off the dire telling, to distance themselves from cruel fate, but the festive air had cleared. The villagers all somberly went back to their day and the seer packed her things and left that very night. Two days later, the beginnings of my fortune were forced upon me.
 
----   ---
+--
 
 What started as a normal day of straightening up my shop and preparing for the day quickly turned sour when a farmer rushed breathlessly into the square warning everyone about a marauding beast. This wasn't the first time a roaming bear or wolf had required handling and the village was well prepared. The women, children, and elders collected themselves in the square, or sequestered themselves in their homes, while a party of men, me included, organized to meet the threat.
 
@@ -53,6 +55,7 @@ I rejected my fate. I realized that any attempt to meet it will only end in sorr
 I still run from my destiny, but if I am destined to be a hero of stories, I can try to minimize the death that comes behind me. I entertain in towns and taverns, telling dark stories and bright tales. I sing of heroism and banditry and use my fair face and silver tongue to earn enough coin to see me on to the next town. But in the night, after those I’ve entertained have gone back safely to their homes, I can still hear the tortured screams of children in my sleep.
 
 # <a name="id-2"></a> Endings and Beginnings
+---
 
 No rest will not come this night. Already I can feel the first tendrils of dawn approaching.
 
@@ -76,7 +79,7 @@ I sensed another opportunity to prove that my existence was more boon than bane 
 
 After outfitting ourselves as best we knew, we set off into the wild searching for the foul labyrinth. For a time, I was happy and free of dread. Our travels were successful, and the challenges easily overcome. Those days seem so far away now. Though it has only been a span of days, perhaps a handful of weeks, I was lighthearted and free of fear. I even thought I might be able to look back on these days and enjoy a drink with these rough people. I would have called them all my friends, even the druid and her absurd crow…I would have…if they had survived.
 
----   ---
+--
 
 When we first approached the labyrinth, I experienced a sick feeling in my bones and I knew. From the moment I saw its cursed gates, I knew that my fate again had reared its head. I trembled in fear at what would become of my new comrades, of my new friend Farrow. Despite the ancient warning, Farrow determinedly focused on moving ahead. The rest of us having no purpose without him, resolutely prepared to follow. We entered the gates.
 
@@ -103,7 +106,7 @@ I sigh in resignation. I can no more resist this most perfect object than I coul
 # <a name="id-3"></a> Home to Heroes
 
 ###### (2019.02.15)
-
+---
 When the room formed from the nothingness around me, the first thing I noticed was that the dulcimer was gone. This did not surprise me. What did surprise me as I looked down was that the burns on my arms and hands were completely healed, no trace remained. Even that one bit of justice has been denied me. Now there is nothing to remind me of my darkest deeds. No punishment for my crimes.
 
 I bitterly mused about the cruelty of my path and then looked up to find myself in strange, but not unfamiliar, surroundings. Office-like in nature, though of a design I’ve never encountered. A strangely smooth ceiling and four comforting walls marked by two doors in the wall opposite me, and a set of double doors in the wall to my right. Several people in neat yet bizarre garments occupied a number of chairs against the two walls not marred by doors. The room contained several low tables between some of the chairs with brightly colored bits of paper spread atop them in a way that attempted, but failed, to be decorative. The setting seemed altogether like some form of reception room for a guildhall, though of what profession I could not say. Next to a glass tank containing several colorful fish, a man sat at a desk clearly making an effort to pretend he was the only person in the room. The clerk, if that is his profession, sat studiously staring at a box-shaped object with some form of magical light coming from the side facing him despite the presence of the motley crew all muttering in the various chairs around the room. There are some things that will always remain the same.

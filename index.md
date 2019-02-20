@@ -1,4 +1,5 @@
-#Foreword
+# Foreword
+
 My name is Baelic al Faar, and I am a Hero.
 
 …I hope…
@@ -9,7 +10,8 @@ The stories of others deserve to be told, but if not by them, then why not by me
 
 I know not. I will simply have to try. Bear with me dear reader; this chronicle will tell the tale of a group of heroes that saved…everything.
 
-#Beginnings and Endings
+# Beginnings and Endings
+
 In order to begin, I must start at previous endings. As happens to many of my kind, I was abandoned as a babe. As a half-elf, my mixed features were a curse to both my parents. I have no memory of them and know nothing of their trials, but I must judge them harshly for their decision to abandon me near a humble human farming village. Though I have no memory of my parents, I have a great many in that village. A young couple took me in and showed me kindness. They raised me next to their own son. Taught me everything they knew and treated me in all ways as though I was their own flesh and blood. They taught me what it means to be a family.
 
 My parents set me down and told me of my abandonment when I they felt I was old enough to understand. I knew of course that I was a different; my almond shaped eyes, slighter frame, and lightly tipped ears set me apart from everyone else in the village. But despite knowing my nature, they continued to treat me as one of their children, and the entire village turned a blind eye to my differences, accepting me as one of their own.
@@ -50,7 +52,8 @@ I rejected my fate. I realized that any attempt to meet it will only end in sorr
 
 I still run from my destiny, but if I am destined to be a hero of stories, I can try to minimize the death that comes behind me. I entertain in towns and taverns, telling dark stories and bright tales. I sing of heroism and banditry and use my fair face and silver tongue to earn enough coin to see me on to the next town. But in the night, after those I’ve entertained have gone back safely to their homes, I can still hear the tortured screams of children in my sleep.
 
-#Endings and Beginnings
+# Endings and Beginnings
+
 No rest will not come this night. Already I can feel the first tendrils of dawn approaching.
 
 I rub my tired eyes and look over at the body of my friend. The poison that wracked his body through the night had finally done its work; his last breaths rattled from his tortured lungs hours ago. I had sat in silence for hours, numb to the passing of time. Now his cold form is the only reminder of my purpose here.
@@ -97,8 +100,10 @@ Once again my presence has brought destruction. Once again I find myself the unl
 
 I sigh in resignation. I can no more resist this most perfect object than I could resist breathing, or gravity. I can feel it pulling at me. I can hear it calling to me. I feel as though I’m falling toward it and I watch my hands reach out to grasp its perfect neck. I pull the dulcimer to me and cradle it in my arms before setting my hands and striking a perfect chord on its perfect strings. The perfect golden sound that results doesn’t seem to even come from the instrument but emerges from the air and the ether and the heavens…and then everything disappears.
 
-#Home to Heroes 
-######(2019.02.15)
+# Home to Heroes
+
+###### (2019.02.15)
+
 When the room formed from the nothingness around me, the first thing I noticed was that the dulcimer was gone. This did not surprise me. What did surprise me as I looked down was that the burns on my arms and hands were completely healed, no trace remained. Even that one bit of justice has been denied me. Now there is nothing to remind me of my darkest deeds. No punishment for my crimes.
 
 I bitterly mused about the cruelty of my path and then looked up to find myself in strange, but not unfamiliar, surroundings. Office-like in nature, though of a design I’ve never encountered. A strangely smooth ceiling and four comforting walls marked by two doors in the wall opposite me, and a set of double doors in the wall to my right. Several people in neat yet bizarre garments occupied a number of chairs against the two walls not marred by doors. The room contained several low tables between some of the chairs with brightly colored bits of paper spread atop them in a way that attempted, but failed, to be decorative. The setting seemed altogether like some form of reception room for a guildhall, though of what profession I could not say. Next to a glass tank containing several colorful fish, a man sat at a desk clearly making an effort to pretend he was the only person in the room. The clerk, if that is his profession, sat studiously staring at a box-shaped object with some form of magical light coming from the side facing him despite the presence of the motley crew all muttering in the various chairs around the room. There are some things that will always remain the same.

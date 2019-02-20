@@ -1,7 +1,4 @@
-
-[home of heroes](#some-id)
-
-# Foreword
+# <a name="id-0"></a> Foreword
 
 My name is Baelic al Faar, and I am a Hero.
 
@@ -13,7 +10,7 @@ The stories of others deserve to be told, but if not by them, then why not by me
 
 I know not. I will simply have to try. Bear with me dear reader; this chronicle will tell the tale of a group of heroes that saved…everything.
 
-# Beginnings and Endings
+# <a name="id-1"></a> Beginnings and Endings
 
 In order to begin, I must start at previous endings. As happens to many of my kind, I was abandoned as a babe. As a half-elf, my mixed features were a curse to both my parents. I have no memory of them and know nothing of their trials, but I must judge them harshly for their decision to abandon me near a humble human farming village. Though I have no memory of my parents, I have a great many in that village. A young couple took me in and showed me kindness. They raised me next to their own son. Taught me everything they knew and treated me in all ways as though I was their own flesh and blood. They taught me what it means to be a family.
 
@@ -55,7 +52,7 @@ I rejected my fate. I realized that any attempt to meet it will only end in sorr
 
 I still run from my destiny, but if I am destined to be a hero of stories, I can try to minimize the death that comes behind me. I entertain in towns and taverns, telling dark stories and bright tales. I sing of heroism and banditry and use my fair face and silver tongue to earn enough coin to see me on to the next town. But in the night, after those I’ve entertained have gone back safely to their homes, I can still hear the tortured screams of children in my sleep.
 
-# Endings and Beginnings
+# <a name="id-2"></a> Endings and Beginnings
 
 No rest will not come this night. Already I can feel the first tendrils of dawn approaching.
 
@@ -103,7 +100,7 @@ Once again my presence has brought destruction. Once again I find myself the unl
 
 I sigh in resignation. I can no more resist this most perfect object than I could resist breathing, or gravity. I can feel it pulling at me. I can hear it calling to me. I feel as though I’m falling toward it and I watch my hands reach out to grasp its perfect neck. I pull the dulcimer to me and cradle it in my arms before setting my hands and striking a perfect chord on its perfect strings. The perfect golden sound that results doesn’t seem to even come from the instrument but emerges from the air and the ether and the heavens…and then everything disappears.
 
-# <a name="some-id"></a> Home to Heroes
+# <a name="id-3"></a> Home to Heroes
 
 ###### (2019.02.15)
 

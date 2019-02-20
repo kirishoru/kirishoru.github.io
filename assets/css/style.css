@@ -3,6 +3,6 @@
 
 @import "{{ site.theme }}";
 
-body {
-    background-color: #AAAAAA;
+.darker {
+    background-color: #888888;
 }

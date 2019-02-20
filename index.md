@@ -9,7 +9,7 @@ I record this story in the vain hope that my legacy will be one of good and dece
   
 The stories of others deserve to be told, but if not by them, then why not by me. I only hope I can do justice to their valor. But how can I convey with mere words the vanity, the foolhardiness, the bullheaded...tenacity? ...The bravery. The pure hearted altruism. The faith and majesty and greatness embodied by them all. Their splendor.
 
-I know not. I will simply have to try. Bear with me dear reader; this chronicle will tell the tale of a group of heroes that saved…everything.
+I know not. I will simply have to try. Bear with me dear reader; this chronicle will tell the tale of a group of heroes that saved…*everything*.
 
 # <a name="id-1"></a> Beginnings and Endings
 ---

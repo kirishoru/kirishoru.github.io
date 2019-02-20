@@ -104,9 +104,9 @@ Once again my presence has brought destruction. Once again I find myself the unl
 I sigh in resignation. I can no more resist this most perfect object than I could resist breathing, or gravity. I can feel it pulling at me. I can hear it calling to me. I feel as though I’m falling toward it and I watch my hands reach out to grasp its perfect neck. I pull the dulcimer to me and cradle it in my arms before setting my hands and striking a perfect chord on its perfect strings. The perfect golden sound that results doesn’t seem to even come from the instrument but emerges from the air and the ether and the heavens…and then everything disappears.
 
 # <a name="id-3"></a> Home to Heroes
-
-###### (2019.02.15)
 ---
+###### (2019.02.15)
+
 When the room formed from the nothingness around me, the first thing I noticed was that the dulcimer was gone. This did not surprise me. What did surprise me as I looked down was that the burns on my arms and hands were completely healed, no trace remained. Even that one bit of justice has been denied me. Now there is nothing to remind me of my darkest deeds. No punishment for my crimes.
 
 I bitterly mused about the cruelty of my path and then looked up to find myself in strange, but not unfamiliar, surroundings. Office-like in nature, though of a design I’ve never encountered. A strangely smooth ceiling and four comforting walls marked by two doors in the wall opposite me, and a set of double doors in the wall to my right. Several people in neat yet bizarre garments occupied a number of chairs against the two walls not marred by doors. The room contained several low tables between some of the chairs with brightly colored bits of paper spread atop them in a way that attempted, but failed, to be decorative. The setting seemed altogether like some form of reception room for a guildhall, though of what profession I could not say. Next to a glass tank containing several colorful fish, a man sat at a desk clearly making an effort to pretend he was the only person in the room. The clerk, if that is his profession, sat studiously staring at a box-shaped object with some form of magical light coming from the side facing him despite the presence of the motley crew all muttering in the various chairs around the room. There are some things that will always remain the same.

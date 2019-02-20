@@ -1,3 +1,6 @@
+
+[home of heroes](#some-id)
+
 # Foreword
 
 My name is Baelic al Faar, and I am a Hero.
@@ -100,7 +103,7 @@ Once again my presence has brought destruction. Once again I find myself the unl
 
 I sigh in resignation. I can no more resist this most perfect object than I could resist breathing, or gravity. I can feel it pulling at me. I can hear it calling to me. I feel as though I’m falling toward it and I watch my hands reach out to grasp its perfect neck. I pull the dulcimer to me and cradle it in my arms before setting my hands and striking a perfect chord on its perfect strings. The perfect golden sound that results doesn’t seem to even come from the instrument but emerges from the air and the ether and the heavens…and then everything disappears.
 
-# Home to Heroes
+# <a name="some-id"></a> Home to Heroes
 
 ###### (2019.02.15)
 

@@ -1,3 +1,5 @@
+[](The Elder Runes, a HeroFlix Tale)
+
 # <a name="id-0"></a> Foreword
 ---
 

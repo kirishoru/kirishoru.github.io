@@ -149,7 +149,7 @@ After a short walk down the solemnly lit hallway, we came to a solid door. Dunca
 
 After we’d all settled in on one chair or another, Duncan began to tell us of the runes.
 
-The runes, the known ones at least, were discovered accidentally centuries ago by Duncan himself. When he arrived in this place-in-between-planes, an elder being greeted him and taught him how to use them. Duncan was taught that the runes contained a great power; the ability to transfer a person across the planes of existence. But even more, they opened up to a seemingly infinite number of planes. The thought of more planes that even described by the great wheel made my head spin. I couldn’t even remember all of the 26!
+The runes, the known ones at least, were discovered accidentally centuries ago by Duncan himself, and when he arrived in this place-in-between-planes, an elder being was there to greet him. The Elder briefly showed him the way of the runes and how to use them, and then Duncan began to learn what the runes had to offer. Duncan learned that the runes contained a great power; the ability to transfer a person across the planes of existence. But even more, they opened up to a seemingly infinite number of planes. The thought of more planes that even described by the great wheel made my head spin. I couldn’t even remember all of the 26!
 
 These planes, Duncan continued, are infinite in their variety, and besides being able to move people from plane-to-plane, the runes have the ability peer into these planes and observe. Even more, they have to ability to impart a measure of control of the circumstances of a person’s travel and arrival. My mind balked at this, though I could understand how travelling to another plane might alter a person’s being, I couldn’t understand how the traveler might alter the plane itself before arriving.
 
@@ -161,7 +161,7 @@ Despite controlling numerous runes and the organization spending centuries track
 
 After triggering the rune in Wave Echo Cave, Mormesk was transported to the HeroFlix guildhall, and by some miracle, was restored to his former mortal self in the process; a powerful and benevolent mage. Duncan indoctrinated Mormesk into the runes just as we were at that moment, and Mormesk offered to hunt runes for the guild. But once beyond the protections afforded by the in-between, Mormesk reverted back to a wraith. There, his undead form controlled his actions more than his rational mind and he would return to his more evil self. Though Mormesk had returned on several occasions to the in-between, and thence to his senses, the call of the runes could not be denied. Mormesk would eventually attempt to recover the Wave Echo Rune again, only to revert and lose control of himself once more.
 
-Duncan is in desperate need of help. He confessed that it has been a long time since anyone has seen Mormesk and he fears the worst, that Mormesk has started collecting runes for himself, or worse, on behalf of someone, or something, more sinister.
+Duncan is in desperate need of help. He confessed that it has been a long time since anyone has seen Mormesk and he fears the worst. Duncan then asked for our help. Will we help him find the unknown runes? Will we be heroes for his cause? Will we become Rune Hunters?
 
-Duncan then asked for our help. Will we help him find the unknown runes? Will we be heroes for his cause? Will we become Rune Hunters?
+
 

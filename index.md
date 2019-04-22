@@ -171,7 +171,7 @@ Duncan is in desperate need of help. He confessed that it has been a long time s
 
 After Duncan’s impassioned plea to become rune hunters for his cause, everyone seemed drained. Too much had happened too fast and we all needed time to realign with this new way of looking at existence. We tentatively agreed to help Duncan after getting some rest, and he concurred, saying that we’d all be shown to the rooms that had been prepared for us. 
 
-I don’t know how they had rooms prepared for us when we were us when Duncan explicitly told us we had been unexpected, but I was sure the magic of this place had more surprises in store. A non-descript man in crisp but utilitarian garb met me outside of Duncan’s office and …
+I don’t know how they had rooms prepared for us when Duncan explicitly told us we had been unexpected, but I was sure the magic of this place had more surprises in store. A non-descript man in crisp but utilitarian garb met me outside of Duncan’s office and …
 
 {INSERT DESCRIPTION OF HQ}
 

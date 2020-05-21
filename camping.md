@@ -35,8 +35,8 @@ All recommendations/rules by the State and CDC need to be followed:
 - Physical distancing still applies in the outdoors. Plan on maintaining a six-foot distance from people outside of your immediate family
 - You are 'encouraged' to have and wear a cloth face covering when interacting with others
 
-###[State Mask Guidelines](https://sharedsystems.dhsoha.state.or.us/DHSForms/Served/le2288K.pdf)
-###[State Outdoor Recreation Guidelines](https://sharedsystems.dhsoha.state.or.us/DHSForms/Served/le2342E.pdf)
+<h4><a href="https://sharedsystems.dhsoha.state.or.us/DHSForms/Served/le2288K.pdf">State Mask Guidelines (link)</a></h4>
+<h4><a href="https://sharedsystems.dhsoha.state.or.us/DHSForms/Served/le2342E.pdf">State Outdoor Recreation Guidelines (link)</a></h4>
 
 Summary:
 - Prohibit parties (a group of 10 or fewer people that arrived at the site together) from congregating in parking lots for periods longer than reasonable to retrieve/return gear and enter/exit vehicles.

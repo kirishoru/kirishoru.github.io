@@ -3,11 +3,13 @@
 # <a name="id-0"></a> McCoy Property
 ---
 Dispersed camping and traversal of state and private forest land is currently prohibited under the Stay At Home order, so;
-* No walking up the road or hiking too far into the woods; yu must stay within the bounds of the McCoy property for the duration of the event. 
-* The shop will be off limits, as will the nursery area and the main house. 
-* Fell free to visit the pond (there might be ducks!)
-* Dave and Chris will likely stay up at the house.
-* If any tools are needed, let Meghann or Caleb know, they will coordinate getting them.
+<ul>
+<li>No walking up the road or hiking too far into the woods; yu must stay within the bounds of the McCoy property for the duration of the event.</li>
+<li>The shop will be off limits, as will the nursery area and the main house.</li> 
+<li>Fell free to visit the pond (there might be ducks!)</li>
+<li>Dave and Chris will likely stay up at the house.</li>
+<li>If any tools are needed, let Meghann or Caleb know, they will coordinate getting them.</li>
+</ul>
 
 # <a name="id-1"></a> Bathrooms/Showers
 ---

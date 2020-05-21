@@ -3,7 +3,7 @@
 # <a name="id-0"></a> McCoy Property
 ---
 Dispersed camping and traversal of state and private forest land is currently prohibited under the Stay At Home order, so;
-- No walking up the road or hiking too far into the woods; yu must stay within the bounds of the McCoy property for the duration of the event. 
+- No walking up the road or hiking too far into the woods; you must stay within the bounds of the McCoy property for the duration of the event. 
 - The shop will be off limits, as will the nursery area and the main house. 
 - Fell free to visit the pond (there might be ducks!)
 - Dave and Chris will likely stay up at the house.

@@ -5,15 +5,14 @@
 Dispersed camping and traversal of state and private forest land is currently prohibited under the Stay At Home order, so;
 - No walking up the road or hiking too far into the woods; you must stay within the bounds of the McCoy property for the duration of the event. 
 - The shop will be off limits, as will the nursery area and the main house. 
-- Feel free to visit the pond (there might be ducks!)
-- Dave and Chris will likely stay up at the house.
+- Feel free to visit the pond (you might get to see Sigourney Beaver!)
 - If any tools are needed, let Meghann or Caleb know, they will coordinate getting them.
 
 # <a name="id-1"></a> Bathrooms/Showers
 ---
 The Bathroom and Shower will be available, however;
 - Everyone should bring their own soap/shampoo/toilet paper/etc., and don't leave it behind for the next user.
-- Sanitation between uses is required, but we're not sure how that's going to work yet
+- Sanitation between uses is recommended, but we're not sure how that's going to work yet, soap and water is easiest and most effective.
 
 # <a name="id-2"></a> Fires
 ---
@@ -25,7 +24,7 @@ That being said, current fire danger is Low, so we can have a small fire, but ca
 ---
 Everyone bring your own food and beverages as well as any utensils required to prepare it; no sharing. 
 
-Not sure about communal use of the wood BBQ yet. That seems like it might be ok.
+There will be communal use of the wood BBQ. 
 
 # <a name="id-4"></a> Cleanup
 ---
@@ -35,8 +34,7 @@ Follow typical rules of camping; Leave no trace on the landscape, which includes
 ---
 All recommendations/rules by the State and CDC need to be followed:
 - Anyone that suspects they've been in contact with someone who's sick should stay home.
-- Physical distancing still applies in the outdoors. Plan on maintaining a six-foot distance from people outside of your immediate family
-- You are 'encouraged' to have and wear a cloth face covering when interacting with others
+- Physical distancing still applies in the outdoors. Plan on maintaining a six-foot distance from people outside of your immediate family.
 
 <h4><a href="https://sharedsystems.dhsoha.state.or.us/DHSForms/Served/le2288K.pdf">State Mask Guidelines (link)</a></h4>
 <h4><a href="https://sharedsystems.dhsoha.state.or.us/DHSForms/Served/le2342E.pdf">State Outdoor Recreation Guidelines (link)</a></h4>
@@ -48,5 +46,3 @@ State Guideline Summary:
 - Frequently clean and disinfect work areas, high-traffic areas, and commonly touched surfaces in both public and non-public areas of parks and facilities
 - Keep any common areas such as picnic tables not in shelters/structures, day-use shelters, and buildings open to the public arranged so there is at least six (6) feet of physical distance between parties (chairs, benches, tables).
 - Encourage visitors to bring their own food, water bottles and hygiene supplies (including hand sanitizer), as well as to take their trash with them when they leave.
-- Encourage the public to recreate with their own household members rather than with those in their extended social circles.
-- Encourage the public to recreate safely and avoid traveling to or recreating in areas where it is difficult to maintain at least six (6) feet from others not in their party.

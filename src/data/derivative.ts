@@ -12,8 +12,6 @@ export const band = {
   // Contact page.
   contactPitch: 'wanna book us for gigs? tell us you think we’re rad? ask us esoteric questions about the nature of existence?',
   email: 'derivativetheband@gmail.com',
-  // Merch page.
-  merch: 'Sorry, we’re not selling merch on our website right now, but if you come to a show, you can have a sticker!!',
   links: [
     { label: 'Bandcamp', url: 'https://derivativetheband.bandcamp.com/' },
     { label: 'Spotify', url: 'https://open.spotify.com/artist/1tfRbAj5CkZsepfkY6L8fb' },
@@ -50,20 +48,21 @@ export const releases = [
   },
 ]
 
+// No per-photo captions or descriptions (Caleb, 2026-11-01); every photo shares one neutral alt text.
 // Photos by Tim Ward (EXIF Artist / Copyright: timwardphotography.com), shoot dated 2025-03-29 by filename.
 export const photoCredit = { name: 'Tim Ward', url: 'https://timwardphotography.com/' }
-const P = (id: string, orient: 'h' | 'v', alt: string) => ({ id, orient, alt, src: `/derivative/photos/${id}-1600.webp`, small: `/derivative/photos/${id}-800.webp` })
+const P = (id: string, orient: 'h' | 'v') => ({ id, orient, alt: 'Derivative performing live', src: `/derivative/photos/${id}-1600.webp`, small: `/derivative/photos/${id}-800.webp` })
 export const photos = [
-  P('0028', 'h', 'Derivative on stage, the full band in black and white'),
-  P('0049', 'v', 'Guitarist singing at the mic under red light'),
-  P('0039', 'h', 'Drummer behind the kit under purple stage light'),
-  P('0055', 'v', 'Singer shouting into the microphone, black and white'),
-  P('0036', 'v', 'Bassist looking at the camera, black and white'),
-  P('0072', 'h', 'Wide shot of the band playing in a dark bar'),
-  P('0077', 'v', 'Singer mid-song with a guitarist behind, black and white'),
-  P('0018', 'v', 'Two guitarists side by side, black and white'),
-  P('0062', 'v', 'Bassist playing under paper lanterns, black and white'),
-  P('0102', 'h', 'Two guitarists facing each other on stage, black and white'),
+  P('0028', 'h'),
+  P('0049', 'v'),
+  P('0039', 'h'),
+  P('0055', 'v'),
+  P('0036', 'v'),
+  P('0072', 'h'),
+  P('0077', 'v'),
+  P('0018', 'v'),
+  P('0062', 'v'),
+  P('0102', 'h'),
 ]
 
 // From the show flyers in the WordPress uploads.

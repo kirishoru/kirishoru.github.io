@@ -37,10 +37,13 @@ export const release = {
 }
 
 export const bio = {
-  // About page version.
+  // About page version: first person, written with Caleb 2026-11-01.
   about: [
-    'Caleb David Barger builds his sound at the intersection of analog warmth and digital precision. Working from his hybrid studio in Portland, Oregon, he focuses on creating indie-rock tracks that feel expansive but grounded, balancing textured guitar layers with pop-influenced melodies.',
-    'While his roots are firmly planted in the raw energy of 90s alternative, Caleb’s production style pulls from the more atmospheric indie movements of the 2000s and 2010s. His approach is less about chasing radio-ready hooks and more about treating the studio as an instrument, layering pedal chains and synth tones to find a sound that feels familiar yet distinct. The result is a cinematic, honest backdrop designed to give listeners room to think while the music does the heavy lifting of sustaining the mood.',
+    'I make music for the quiet end of a long day. My songs skip the anthems in favor of steady warm energy that holds a mood, with grit under melodies under feeling.',
+    'I build them slowly, in a small studio in Portland, one layer at a time. The room is half the instrument. A pedal chain here, a synth tone there, until the song sounds like somewhere I’ve already been.',
+    'Better The Never was the first time I let my own songs out of the house. The name is a small joke about fatalism: better the Never than the Ever. The cover is a photograph of a piano we found in my wife’s grandmother’s attic after she passed. I don’t know whose room it was, or when. It looked the way those songs felt, so I kept it.',
+    'Derivative is the loud part of me. Four of us in a room, pulling a song somewhere none of us would have taken it alone. That’s where I go for energy, and for rock.',
+    'The solo work is the private part. Programmed drums, synths, sounds that live better in headphones than in a bar. On <em>thisillusioned</em> every part and every decision was mine. Looking back, I think I was learning to live with my own disillusionment. This dissolution. thisillusioned.',
   ],
   // Press kit version.
   press: [

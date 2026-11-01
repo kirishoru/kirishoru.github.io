@@ -1,17 +1,60 @@
-:root {
-  --bg: #fafaf9; --fg: #1c1917; --muted: #78716c; --line: #e7e5e4; --accent: #0f766e;
-  font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
-  color: var(--fg); background: var(--bg);
+@import "tailwindcss";
+@source "../index.html";
+@source "../prioritize";
+@source "../bodycomp";
+
+@plugin "daisyui" {
+  themes: light --default, dark --prefersdark;
 }
-@media (prefers-color-scheme: dark) {
-  :root { --bg: #1c1917; --fg: #f5f5f4; --muted: #a8a29e; --line: #44403c; --accent: #5eead4; }
+
+/* Brand colors layered over daisyUI's built-in light and dark themes. */
+@plugin "daisyui/theme" {
+  name: "light";
+  default: true;
+  --color-base-100: oklch(99% 0.004 95);
+  --color-base-200: oklch(96.5% 0.007 95);
+  --color-base-300: oklch(91% 0.01 95);
+  --color-base-content: oklch(24% 0.02 260);
+  --color-primary: oklch(52% 0.105 186);
+  --color-primary-content: oklch(98% 0.01 186);
+  --color-secondary: oklch(66% 0.17 55);
+  --color-secondary-content: oklch(20% 0.05 55);
+  --color-accent: oklch(58% 0.16 290);
+  --color-accent-content: oklch(98% 0.01 290);
+  --color-warning: oklch(56% 0.13 62);
+  --color-warning-content: oklch(98% 0.01 62);
+  --radius-box: 1.25rem;
+  --radius-field: 0.75rem;
+  --radius-selector: 0.75rem;
+  --depth: 1;
 }
-body { margin: 0; }
-main { max-width: 42rem; margin: 0 auto; padding: 3rem 1rem; }
-h1 { font-size: 1.75rem; margin: 0 0 .5rem; }
-p { color: var(--muted); line-height: 1.5; }
-a { color: var(--accent); }
-ul.tools { list-style: none; padding: 0; margin-top: 2rem; }
-ul.tools li { border-top: 1px solid var(--line); padding: 1rem 0; }
-ul.tools a { font-weight: 600; text-decoration: none; }
-nav.back { margin-bottom: 2rem; font-size: .9rem; }
+@plugin "daisyui/theme" {
+  name: "dark";
+  prefersdark: true;
+  --color-base-100: oklch(21% 0.015 255);
+  --color-base-200: oklch(18% 0.014 255);
+  --color-base-300: oklch(30% 0.018 255);
+  --color-base-content: oklch(93% 0.01 255);
+  --color-primary: oklch(78% 0.12 182);
+  --color-primary-content: oklch(20% 0.04 182);
+  --color-secondary: oklch(76% 0.15 60);
+  --color-secondary-content: oklch(20% 0.05 60);
+  --color-accent: oklch(74% 0.13 290);
+  --color-accent-content: oklch(20% 0.05 290);
+  --radius-box: 1.25rem;
+  --radius-field: 0.75rem;
+  --radius-selector: 0.75rem;
+  --depth: 1;
+}
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+}
+
+@layer base {
+  body { @apply bg-base-200 min-h-dvh antialiased; }
+  input[type=number] { font-variant-numeric: tabular-nums; }
+}
+
+@keyframes rise { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+.rise { animation: rise .25s ease-out both; }

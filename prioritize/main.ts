@@ -1,5 +1,5 @@
 import { run, sortEstimate, type Answer, type RunResult } from './rank.ts'
-import './prioritize.css'
+
 
 // The whole session lives in the URL hash, so a link restores it exactly.
 interface Session { q: string; items: string[]; ans: Answer[]; check: boolean }
@@ -43,27 +43,38 @@ function render() {
   else renderResult(session, r)
 }
 
+const estimateText = (n: number, check: boolean) =>
+  n < 2 ? 'Add at least two options.' : `${n} options, at most ${sortEstimate(n)} questions${check ? ' plus a few checks' : ''}.`
+
 function renderSetup() {
-  const items = parseItems(draft.text)
-  const n = items.length
+  const n = parseItems(draft.text).length
   app.innerHTML = `
-    <p class="intro">List the options, one per line. You'll compare them two at a time, and the tool builds the ranking.</p>
-    <form class="setup">
-      <label class="stack">Question <input name="q" placeholder="${DEFAULT_Q}" value="${esc(draft.q)}"></label>
-      <label class="stack">Options <textarea name="items" rows="8" placeholder="Tacos&#10;Ramen&#10;Pizza">${esc(draft.text)}</textarea></label>
-      <label class="check"><input type="checkbox" name="check" ${draft.check ? 'checked' : ''}> Check for contradictions <span>a few extra questions; catches slips and real toss-ups</span></label>
-      <div class="row">
-        <button type="submit" class="primary" ${n < 2 ? 'disabled' : ''}>Start</button>
-        <span class="muted">${n < 2 ? 'Add at least two options.' : `${n} options, at most ${sortEstimate(n)} questions${draft.check ? ' plus a few checks' : ''}.`}</span>
+    <form class="card bg-base-100 shadow-sm rise"><div class="card-body gap-5">
+      <fieldset class="fieldset">
+        <legend class="fieldset-legend text-sm">Question</legend>
+        <input name="q" class="input w-full" placeholder="${DEFAULT_Q}" value="${esc(draft.q)}">
+        <p class="label">Optional. Shown above every comparison.</p>
+      </fieldset>
+      <fieldset class="fieldset">
+        <legend class="fieldset-legend text-sm">Options</legend>
+        <textarea name="items" rows="8" class="textarea w-full text-base leading-relaxed" placeholder="Tacos&#10;Ramen&#10;Pizza">${esc(draft.text)}</textarea>
+        <p class="label">One per line. Duplicates are ignored.</p>
+      </fieldset>
+      <label class="flex items-start gap-3 cursor-pointer">
+        <input type="checkbox" name="check" class="toggle toggle-primary mt-0.5" ${draft.check ? 'checked' : ''}>
+        <span><span class="font-medium">Check for contradictions</span><br><span class="text-sm text-base-content/60">A few extra questions that catch slips and real toss-ups.</span></span>
+      </label>
+      <div class="card-actions items-center justify-between border-t border-base-300 pt-5">
+        <span class="text-sm text-base-content/60" data-est>${estimateText(n, draft.check)}</span>
+        <button type="submit" class="btn btn-primary" ${n < 2 ? 'disabled' : ''}>Start ranking</button>
       </div>
-    </form>`
+    </div></form>`
   const form = app.querySelector('form')!
   form.addEventListener('input', () => {
     draft = { text: form.items.value, q: form.q.value, check: form.check.checked }
     const k = parseItems(draft.text).length
-    const btn = form.querySelector<HTMLButtonElement>('button')!
-    btn.disabled = k < 2
-    form.querySelector('.row .muted')!.textContent = k < 2 ? 'Add at least two options.' : `${k} options, at most ${sortEstimate(k)} questions${draft.check ? ' plus a few checks' : ''}.`
+    form.querySelector<HTMLButtonElement>('button[type=submit]')!.disabled = k < 2
+    form.querySelector('[data-est]')!.textContent = estimateText(k, draft.check)
   })
   form.addEventListener('submit', (e) => {
     e.preventDefault()
@@ -81,19 +92,32 @@ function renderQuestion(s: Session, r: RunResult) {
   const flip = s.ans.length % 2 === 1
   const [left, right] = flip ? [y, x] : [x, y]
   const total = r.asked + r.remaining
-  const phaseNote = r.phase === 'sort' ? `Placing option ${r.inserted + 1} of ${s.items.length}` : r.phase === 'check' ? 'Checking the order' : 'Rechecking a contradiction'
+  const phase = r.phase === 'sort'
+    ? `<span class="badge badge-soft badge-primary">Placing ${r.inserted + 1} of ${s.items.length}</span>`
+    : r.phase === 'check'
+      ? '<span class="badge badge-soft badge-accent">Checking the order</span>'
+      : '<span class="badge badge-soft badge-secondary">Rechecking a contradiction</span>'
+  const choice = (i: number, key: string) => `
+    <button data-pick="${i}" class="group card bg-base-100 shadow-sm border-2 border-base-300 hover:border-primary hover:shadow-lg hover:-translate-y-0.5 focus-visible:border-primary outline-none transition cursor-pointer">
+      <div class="card-body items-center justify-center text-center min-h-28 sm:min-h-40 gap-3">
+        <span class="text-xl sm:text-2xl font-bold break-words">${esc(s.items[i])}</span>
+        <kbd class="kbd kbd-sm opacity-50 group-hover:opacity-100">${key}</kbd>
+      </div>
+    </button>`
   app.innerHTML = `
-    <div class="progress" aria-hidden="true"><div style="width:${Math.round((100 * r.asked) / total)}%"></div></div>
-    <p class="muted small">${phaseNote}. Question ${r.asked + 1}, about ${r.remaining} to go.</p>
-    <h2 class="q">${esc(s.q)}</h2>
-    <div class="pair">
-      <button class="choice" data-pick="${left}"><kbd>←</kbd>${esc(s.items[left])}</button>
-      <button class="choice" data-pick="${right}"><kbd>→</kbd>${esc(s.items[right])}</button>
-    </div>
-    <div class="row center">
-      <button class="ghost" data-pick="equal"><kbd>↓</kbd>About equal</button>
-      <button class="ghost" data-undo ${s.ans.length ? '' : 'disabled'}><kbd>U</kbd>Undo</button>
-      <button class="ghost" data-reset>Start over</button>
+    <div class="space-y-6">
+      <div class="flex items-center justify-between gap-3 flex-wrap">
+        ${phase}
+        <span class="text-sm text-base-content/60 tabular-nums">Question ${r.asked + 1} · about ${r.remaining} to go</span>
+      </div>
+      <progress class="progress progress-primary w-full" value="${r.asked}" max="${total}"></progress>
+      <h2 class="text-xl sm:text-2xl font-bold text-center">${esc(s.q)}</h2>
+      <div class="grid sm:grid-cols-2 gap-4 rise">${choice(left, '←')}${choice(right, '→')}</div>
+      <div class="flex justify-center gap-2 flex-wrap">
+        <button class="btn btn-outline btn-sm" data-pick="equal"><kbd class="kbd kbd-xs">↓</kbd>About equal</button>
+        <button class="btn btn-ghost btn-sm" data-undo ${s.ans.length ? '' : 'disabled'}><kbd class="kbd kbd-xs">U</kbd>Undo</button>
+        <button class="btn btn-ghost btn-sm" data-reset>Start over</button>
+      </div>
     </div>`
   const answer = (pick: string) => {
     const a: Answer = pick === 'equal' ? 'e' : Number(pick) === x ? 'a' : 'b'
@@ -115,23 +139,32 @@ function renderResult(s: Session, r: RunResult) {
   let rank = 1
   const rows = r.tiers
     .map((t) => {
-      const label = t.items.length > 1 ? `${rank}–${rank + t.items.length - 1}` : String(rank)
+      const label = t.items.length > 1 ? `${rank}–${rank + t.items.length - 1}` : String(rank).padStart(2, '0')
+      const top = rank === 1
       rank += t.items.length
-      const note = t.kind === 'equal' ? '<span class="tag">tied</span>' : t.kind === 'cycle' ? '<span class="tag warn">toss-up</span>' : ''
-      return `<li><span class="rank">${label}</span><span class="names">${t.items.map((i) => esc(s.items[i])).join('<br>')}</span>${note}</li>`
+      const note = t.kind === 'equal' ? '<span class="badge badge-soft badge-neutral">tied</span>' : t.kind === 'cycle' ? '<span class="badge badge-soft badge-warning">toss-up</span>' : ''
+      return `<li class="list-row items-center">
+        <div class="text-3xl font-extralight tabular-nums ${top ? 'text-primary' : 'opacity-40'} min-w-12">${label}</div>
+        <div class="text-lg font-semibold leading-relaxed">${t.items.map((i) => esc(s.items[i])).join('<br>')}</div>
+        <div>${note}</div>
+      </li>`
     })
     .join('')
   const cycles = r.tiers.some((t) => t.kind === 'cycle')
   app.innerHTML = `
-    <h2 class="q">${esc(s.q)}</h2>
-    <ol class="ranking">${rows}</ol>
-    <p class="muted small">${r.asked} questions${s.check ? `, ${r.contradictions} contradiction${r.contradictions === 1 ? '' : 's'} rechecked` : ''}.</p>
-    ${cycles ? '<p class="note">A toss-up means your answers went in a circle (A over B, B over C, C over A) even after rechecking. That usually means they are close, or you value them for different reasons.</p>' : ''}
-    <div class="row">
-      <button class="primary" data-copy>Copy link</button>
-      <button class="ghost" data-undo><kbd>U</kbd>Undo last answer</button>
-      <button class="ghost" data-edit>Edit options</button>
-      <button class="ghost" data-reset>Start over</button>
+    <div class="space-y-6 rise">
+      <div class="flex items-end justify-between gap-3 flex-wrap">
+        <h2 class="text-xl sm:text-2xl font-bold">${esc(s.q)}</h2>
+        <span class="text-sm text-base-content/60">${r.asked} questions${s.check ? ` · ${r.contradictions} contradiction${r.contradictions === 1 ? '' : 's'} rechecked` : ''}</span>
+      </div>
+      <ul class="list bg-base-100 rounded-box shadow-sm">${rows}</ul>
+      ${cycles ? '<div role="alert" class="alert alert-warning alert-soft"><span>A toss-up means your answers went in a circle (A over B, B over C, C over A) even after rechecking. That usually means the options are close, or you value them for different reasons.</span></div>' : ''}
+      <div class="flex gap-2 flex-wrap">
+        <button class="btn btn-primary" data-copy>Copy link</button>
+        <button class="btn btn-ghost" data-undo><kbd class="kbd kbd-xs">U</kbd>Undo last answer</button>
+        <button class="btn btn-ghost" data-edit>Edit options</button>
+        <button class="btn btn-ghost" data-reset>Start over</button>
+      </div>
     </div>`
   bindCommon(s)
   app.querySelector('[data-copy]')!.addEventListener('click', async (e) => {

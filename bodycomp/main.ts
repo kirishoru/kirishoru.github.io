@@ -1,5 +1,5 @@
 import { ACTIVITY, LB_PER_KG, SITES, SITE_LABELS, compute, type ActivityId, type Protocol, type Sex, type Site } from './calc.ts'
-import './bodycomp.css'
+
 
 type Unit = 'imperial' | 'metric'
 
@@ -37,40 +37,42 @@ const toKg = (v: number) => (state.unit === 'metric' ? v : v / LB_PER_KG)
 const fromKg = (kg: number) => (state.unit === 'metric' ? kg : kg * LB_PER_KG)
 
 function segmented<T extends string>(name: string, value: T, options: [T, string][]) {
-  return `<div class="seg" role="radiogroup" aria-label="${name}">${options
-    .map(([v, label]) => `<button type="button" role="radio" data-${name}="${v}" aria-checked="${v === value}">${label}</button>`)
+  return `<div class="join" role="radiogroup" aria-label="${name}">${options
+    .map(([v, label]) => `<button type="button" role="radio" data-${name}="${v}" aria-checked="${v === value}" class="btn btn-sm join-item ${v === value ? 'btn-primary' : 'btn-ghost border-base-300'}">${label}</button>`)
     .join('')}</div>`
 }
+
+const row = (label: string, control: string) => `<div class="flex items-center justify-between gap-4"><span class="text-sm font-medium">${label}</span>${control}</div>`
+const num = (name: string, value: string, unit: string, step = '1') =>
+  `<label class="input input-sm w-36"><input name="${name}" type="number" inputmode="decimal" min="0" step="${step}" value="${value}" class="text-right"><span class="text-base-content/50 w-6">${unit}</span></label>`
 
 function render() {
   const sites = SITES[state.sex][state.protocol]
   app.innerHTML = `
-    <div class="units">${segmented<Unit>('unit', state.unit, [['imperial', 'lb'], ['metric', 'kg']])}</div>
-    <p class="intro">Estimates body fat from skinfold caliper measurements (Jackson-Pollock), then resting and daily calories from lean mass (Katch-McArdle).</p>
-    <form class="grid" autocomplete="off">
-      <fieldset>
-        <legend>You</legend>
-        <label>Sex ${segmented<Sex>('sex', state.sex, [['male', 'Male'], ['female', 'Female']])}</label>
-        <label>Age <span class="field"><input name="age" type="number" inputmode="decimal" min="1" value="${state.age}"><span>yr</span></span></label>
-        <label>Weight <span class="field"><input name="weight" type="number" inputmode="decimal" min="1" step="0.1" value="${state.weight}"><span>${massUnit()}</span></span></label>
-        <label>Activity
-          <select name="activity">${ACTIVITY.map((a) => `<option value="${a.id}" ${a.id === state.activity ? 'selected' : ''}>${a.label}</option>`).join('')}</select>
-        </label>
-      </fieldset>
-      <fieldset>
-        <legend>Skinfolds</legend>
-        <label>Method ${segmented<Protocol>('protocol', state.protocol, [['jp3', '3-site'], ['jp7', '7-site']])}</label>
-        ${sites
-          .map((s) => `<label>${SITE_LABELS[s]} <span class="field"><input name="site:${s}" type="number" inputmode="decimal" min="0" step="0.5" value="${state.skinfolds[s] ?? ''}"><span>mm</span></span></label>`)
-          .join('')}
-      </fieldset>
+    <form autocomplete="off" class="space-y-6">
+      <div class="flex justify-end">${segmented<Unit>('unit', state.unit, [['imperial', 'lb'], ['metric', 'kg']])}</div>
+      <div class="grid gap-6 md:grid-cols-2">
+        <section class="card bg-base-100 shadow-sm"><div class="card-body gap-4">
+          <h2 class="card-title">You</h2>
+          ${row('Sex', segmented<Sex>('sex', state.sex, [['male', 'Male'], ['female', 'Female']]))}
+          ${row('Age', num('age', state.age, 'yr'))}
+          ${row('Weight', num('weight', state.weight, massUnit(), '0.1'))}
+          ${row('Activity', `<select name="activity" class="select select-sm w-52">${ACTIVITY.map((a) => `<option value="${a.id}" ${a.id === state.activity ? 'selected' : ''}>${a.label}</option>`).join('')}</select>`)}
+        </div></section>
+        <section class="card bg-base-100 shadow-sm"><div class="card-body gap-4">
+          <h2 class="card-title">Skinfolds</h2>
+          ${row('Method', segmented<Protocol>('protocol', state.protocol, [['jp3', '3-site'], ['jp7', '7-site']]))}
+          ${sites.map((site) => row(SITE_LABELS[site], num(`site:${site}`, state.skinfolds[site] ?? '', 'mm', '0.5'))).join('')}
+        </div></section>
+      </div>
     </form>
-    <section class="results" aria-live="polite"></section>
+    <section class="results mt-8" aria-live="polite"></section>
   `
-  renderResults()
+  renderResults(true)
 }
 
-function renderResults() {
+let lastOk = false
+function renderResults(animate = false) {
   const out = app.querySelector<HTMLElement>('.results')!
   const skinfolds: Partial<Record<Site, number>> = {}
   for (const [k, v] of Object.entries(state.skinfolds)) if (v !== '' && v !== undefined) skinfolds[k as Site] = Number(v)
@@ -80,20 +82,44 @@ function renderResults() {
       skinfolds, activity: state.activity,
     })
     const fatPct = Math.min(100, Math.max(0, r.bodyFatPct))
+    const stat = (title: string, value: string, desc = '') =>
+      `<div class="stat"><div class="stat-title">${title}</div><div class="stat-value text-2xl sm:text-3xl tabular-nums">${value}</div>${desc ? `<div class="stat-desc">${desc}</div>` : ''}</div>`
+    const fresh = animate || !lastOk
     out.innerHTML = `
-      <div class="stats">
-        <div><span>Body fat</span><strong>${fmt(r.bodyFatPct)}%</strong></div>
-        <div><span>Fat mass</span><strong>${fmt(fromKg(r.fatKg))} ${massUnit()}</strong></div>
-        <div><span>Lean mass</span><strong>${fmt(fromKg(r.leanKg))} ${massUnit()}</strong></div>
-        <div><span>Resting (BMR)</span><strong>${fmt(r.bmr, 0)} kcal</strong></div>
-        <div><span>Daily (TDEE)</span><strong>${fmt(r.tdee, 0)} kcal</strong></div>
-      </div>
-      <div class="bar" role="img" aria-label="${fmt(r.bodyFatPct)}% fat, ${fmt(100 - r.bodyFatPct)}% lean">
-        <div class="fat" style="width:${fatPct}%"></div><div class="lean"></div>
-      </div>
-      <p class="fine">Skinfold sum ${fmt(r.sum)} mm, body density ${r.density.toFixed(4)} g/cm³.</p>`
+      <div class="card bg-base-100 shadow-sm ${fresh ? 'rise' : ''}"><div class="card-body gap-6">
+        <div class="grid gap-6 lg:grid-cols-[3fr_2fr]">
+          <div>
+            <h2 class="card-title mb-2">Composition</h2>
+            <div class="stats stats-vertical sm:stats-horizontal w-full bg-base-200">
+              ${stat('Body fat', `${fmt(r.bodyFatPct)}%`, 'of body weight')}
+              ${stat('Fat mass', `${fmt(fromKg(r.fatKg))}`, massUnit())}
+              ${stat('Lean mass', `${fmt(fromKg(r.leanKg))}`, massUnit())}
+            </div>
+          </div>
+          <div>
+            <h2 class="card-title mb-2">Energy</h2>
+            <div class="stats stats-vertical sm:stats-horizontal w-full bg-base-200">
+              ${stat('Resting', fmt(r.bmr, 0), 'kcal/day (BMR)')}
+              ${stat('Daily', fmt(r.tdee, 0), 'kcal/day (TDEE)')}
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="flex h-3 rounded-full overflow-hidden bg-base-300" role="img" aria-label="${fmt(r.bodyFatPct)}% fat, ${fmt(100 - r.bodyFatPct)}% lean">
+            <div class="bg-secondary transition-all duration-500" style="width:${fatPct}%"></div>
+            <div class="bg-primary flex-1 transition-all duration-500"></div>
+          </div>
+          <div class="flex justify-between text-xs mt-2 text-base-content/60">
+            <span><span class="inline-block size-2 rounded-full bg-secondary mr-1"></span>Fat ${fmt(r.bodyFatPct)}%</span>
+            <span>Lean ${fmt(100 - r.bodyFatPct)}%<span class="inline-block size-2 rounded-full bg-primary ml-1"></span></span>
+          </div>
+          <p class="text-xs text-base-content/50 mt-3">Skinfold sum ${fmt(r.sum)} mm, body density ${r.density.toFixed(4)} g/cm³.</p>
+        </div>
+      </div></div>`
+    lastOk = true
   } catch (e) {
-    out.innerHTML = `<p class="hint">${(e as Error).message}.</p>`
+    out.innerHTML = `<div role="alert" class="alert alert-soft">${(e as Error).message}.</div>`
+    lastOk = false
   }
 }
 

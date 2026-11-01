@@ -10,7 +10,10 @@
     "test": "node --test \"**/*.test.ts\""
   },
   "devDependencies": {
+    "@tailwindcss/vite": "^4.3.3",
     "@types/node": "^22.20.5",
+    "daisyui": "^5.7.50",
+    "tailwindcss": "^4.3.3",
     "typescript": "^7.0.2",
     "vite": "^8.3.5"
   }

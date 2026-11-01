@@ -14,6 +14,7 @@ const path = Astro.url.pathname
 const nav = [
   { href: '/', label: 'Music' },
   { href: '/derivative/', label: 'Derivative' },
+  { href: '/better-the-never/', label: 'Better The Never' },
   { href: '/about/', label: 'About' },
   { href: '/press/', label: 'Press' },
 ]
@@ -42,7 +43,7 @@ const ogImage = new URL(image, Astro.site ?? Astro.url).href
   <body class="flex flex-col">
     <header class="max-w-5xl w-full mx-auto px-4 py-4 flex items-center gap-4 flex-wrap">
       <a href="/" class="font-display text-xl font-semibold tracking-tight">{artist.name}</a>
-      <nav class="ml-auto flex gap-1" aria-label="Main">
+      <nav class="w-full sm:w-auto sm:ml-auto flex flex-wrap gap-1 -mx-3 sm:mx-0" aria-label="Main">
         {nav.map((n) => (
           <a href={n.href} class:list={['btn btn-ghost btn-sm', isActive(n.href) && 'btn-active']} aria-current={isActive(n.href) ? 'page' : undefined}>{n.label}</a>
         ))}

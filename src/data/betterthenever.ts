@@ -18,8 +18,8 @@ export const project = {
     src: '/better-the-never/everything-is-fine.mp4',
     poster: '/better-the-never/poster.webp',
     title: 'Everything Is Fine',
-    width: 720,
-    height: 378,
+    width: 1280,
+    height: 674,
   },
 }
 

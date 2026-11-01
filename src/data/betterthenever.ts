@@ -4,7 +4,7 @@
 export const project = {
   name: 'Better The Never',
   summary:
-    'Caleb’s first solo project. He produced most of it himself, brought in a professional to mix and master, and self-released it through DistroKid.',
+    'Caleb’s first solo project. He produced most of it himself, brought in a professional to mix and master, and released it himself.',
   links: [
     { label: 'Apple Music', url: 'https://music.apple.com/us/artist/better-the-never/1654603251' },
     { label: 'Spotify', url: 'https://open.spotify.com/artist/1FcfcSOJIKYHxS81qkvDzY' },

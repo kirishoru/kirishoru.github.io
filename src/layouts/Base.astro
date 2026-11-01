@@ -1,13 +1,24 @@
+---
+import '../styles/global.css'
+
+interface Props {
+  title: string
+  heading?: string
+  subtitle?: string
+  description?: string
+}
+const { title, heading, subtitle, description } = Astro.props
+---
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Prioritize</title>
+    <title>{title}</title>
+    {description && <meta name="description" content={description} />}
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="/src/style.css" />
   </head>
   <body>
     <header class="navbar max-w-4xl mx-auto px-4">
@@ -18,12 +29,13 @@
       </nav>
     </header>
     <main class="max-w-4xl mx-auto px-4 pb-16">
-      <div class="pt-6 pb-8">
-        <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight">Prioritize</h1>
-        <p class="mt-2 text-base-content/70 max-w-2xl">Compare options two at a time; the ranking builds itself.</p>
-      </div>
-      <div id="app"></div>
+      {heading && (
+        <div class="pt-6 pb-8">
+          <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight">{heading}</h1>
+          {subtitle && <p class="mt-2 text-base-content/70 max-w-2xl">{subtitle}</p>}
+        </div>
+      )}
+      <slot />
     </main>
-    <script type="module" src="./main.ts"></script>
   </body>
 </html>

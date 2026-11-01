@@ -1,7 +1,5 @@
 @import "tailwindcss";
-@source "../index.html";
-@source "../prioritize";
-@source "../bodycomp";
+@source "..";
 
 @plugin "daisyui" {
   themes: light --default, dark --prefersdark;

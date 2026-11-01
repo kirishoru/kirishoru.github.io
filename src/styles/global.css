@@ -5,51 +5,57 @@
   themes: light --default, dark --prefersdark;
 }
 
-/* Brand colors layered over daisyUI's built-in light and dark themes. */
+/* Palette drawn from the thisillusioned cover: paper, bruise plum, muted rose. */
 @plugin "daisyui/theme" {
   name: "light";
   default: true;
-  --color-base-100: oklch(99% 0.004 95);
-  --color-base-200: oklch(96.5% 0.007 95);
-  --color-base-300: oklch(91% 0.01 95);
-  --color-base-content: oklch(24% 0.02 260);
-  --color-primary: oklch(52% 0.105 186);
-  --color-primary-content: oklch(98% 0.01 186);
-  --color-secondary: oklch(66% 0.17 55);
-  --color-secondary-content: oklch(20% 0.05 55);
-  --color-accent: oklch(58% 0.16 290);
-  --color-accent-content: oklch(98% 0.01 290);
+  --color-base-100: oklch(98.6% 0.007 85);
+  --color-base-200: oklch(95.8% 0.011 80);
+  --color-base-300: oklch(89.5% 0.016 60);
+  --color-base-content: oklch(25% 0.025 340);
+  --color-primary: oklch(42% 0.085 350);
+  --color-primary-content: oklch(98% 0.008 85);
+  --color-secondary: oklch(60% 0.09 25);
+  --color-secondary-content: oklch(98% 0.008 85);
+  --color-accent: oklch(70% 0.09 75);
+  --color-accent-content: oklch(22% 0.03 75);
+  --color-neutral: oklch(30% 0.02 340);
+  --color-neutral-content: oklch(96% 0.008 85);
   --color-warning: oklch(56% 0.13 62);
   --color-warning-content: oklch(98% 0.01 62);
-  --radius-box: 1.25rem;
-  --radius-field: 0.75rem;
-  --radius-selector: 0.75rem;
+  --radius-box: 1rem;
+  --radius-field: 0.6rem;
+  --radius-selector: 0.6rem;
   --depth: 1;
 }
 @plugin "daisyui/theme" {
   name: "dark";
   prefersdark: true;
-  --color-base-100: oklch(21% 0.015 255);
-  --color-base-200: oklch(18% 0.014 255);
-  --color-base-300: oklch(30% 0.018 255);
-  --color-base-content: oklch(93% 0.01 255);
-  --color-primary: oklch(78% 0.12 182);
-  --color-primary-content: oklch(20% 0.04 182);
-  --color-secondary: oklch(76% 0.15 60);
-  --color-secondary-content: oklch(20% 0.05 60);
-  --color-accent: oklch(74% 0.13 290);
-  --color-accent-content: oklch(20% 0.05 290);
-  --radius-box: 1.25rem;
-  --radius-field: 0.75rem;
-  --radius-selector: 0.75rem;
+  --color-base-100: oklch(20% 0.014 340);
+  --color-base-200: oklch(16.5% 0.012 340);
+  --color-base-300: oklch(30% 0.02 340);
+  --color-base-content: oklch(92% 0.012 80);
+  --color-primary: oklch(77% 0.075 350);
+  --color-primary-content: oklch(20% 0.03 350);
+  --color-secondary: oklch(76% 0.07 30);
+  --color-secondary-content: oklch(20% 0.03 30);
+  --color-accent: oklch(80% 0.09 80);
+  --color-accent-content: oklch(20% 0.03 80);
+  --color-neutral: oklch(88% 0.012 80);
+  --color-neutral-content: oklch(20% 0.014 340);
+  --radius-box: 1rem;
+  --radius-field: 0.6rem;
+  --radius-selector: 0.6rem;
   --depth: 1;
 }
 
 @theme {
   --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Fraunces", ui-serif, Georgia, serif;
 }
 
 @layer base {
+  h1, h2, h3, .font-display { font-family: var(--font-serif); font-optical-sizing: auto; letter-spacing: -0.01em; }
   body { @apply bg-base-200 min-h-dvh antialiased; }
   input[type=number] { font-variant-numeric: tabular-nums; }
 }

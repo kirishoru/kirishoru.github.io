@@ -1,0 +1,16 @@
+---
+import type { Quote } from '../data/music.ts'
+interface Props { quote: Quote; large?: boolean }
+const { quote, large = false } = Astro.props
+---
+<figure class:list={['card bg-base-100 shadow-sm h-full', large && 'sm:col-span-2 lg:col-span-3']}>
+  <div class="card-body gap-4 justify-between">
+    <blockquote class:list={['font-display leading-snug', large ? 'text-xl sm:text-2xl' : 'text-lg']}>
+      {quote.lead && <p class="text-primary mb-2">{quote.lead}</p>}
+      <p>“{quote.text}”</p>
+    </blockquote>
+    <figcaption class="text-sm text-base-content/60">
+      {quote.url ? <a class="link link-hover" href={quote.url} target="_blank" rel="noopener">{quote.source}</a> : quote.source}
+    </figcaption>
+  </div>
+</figure>

@@ -1,41 +1,74 @@
 ---
 import '../styles/global.css'
+import { artist } from '../data/music.ts'
 
 interface Props {
   title: string
   heading?: string
   subtitle?: string
   description?: string
+  image?: string
 }
-const { title, heading, subtitle, description } = Astro.props
+const { title, heading, subtitle, description = `${artist.name}: ${artist.genre.toLowerCase()} from ${artist.location}. ${artist.pitch}`, image = '/images/thisillusioned-1200.jpg' } = Astro.props
+const path = Astro.url.pathname
+const nav = [
+  { href: '/', label: 'Music' },
+  { href: '/about/', label: 'About' },
+  { href: '/press/', label: 'Press' },
+]
+const isActive = (href: string) => (href === '/' ? path === '/' : path.startsWith(href))
+const fullTitle = title === artist.name ? title : `${title} · ${artist.name}`
+const ogImage = new URL(image, Astro.site ?? Astro.url).href
 ---
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{title}</title>
-    {description && <meta name="description" content={description} />}
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" href="/favicon-32.png" sizes="32x32" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
   </head>
-  <body>
-    <header class="navbar max-w-4xl mx-auto px-4">
-      <a href="/" class="text-lg font-extrabold tracking-tight">kirishoru</a>
-      <nav class="ml-auto flex gap-1">
-        <a href="/prioritize/" class="btn btn-ghost btn-sm">Prioritize</a>
-        <a href="/bodycomp/" class="btn btn-ghost btn-sm">Body comp</a>
+  <body class="flex flex-col">
+    <header class="max-w-5xl w-full mx-auto px-4 py-4 flex items-center gap-4 flex-wrap">
+      <a href="/" class="font-display text-xl font-semibold tracking-tight">{artist.name}</a>
+      <nav class="ml-auto flex gap-1" aria-label="Main">
+        {nav.map((n) => (
+          <a href={n.href} class:list={['btn btn-ghost btn-sm', isActive(n.href) && 'btn-active']} aria-current={isActive(n.href) ? 'page' : undefined}>{n.label}</a>
+        ))}
       </nav>
     </header>
-    <main class="max-w-4xl mx-auto px-4 pb-16">
+    <main class="max-w-5xl w-full mx-auto px-4 pb-20 flex-1">
       {heading && (
-        <div class="pt-6 pb-8">
-          <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight">{heading}</h1>
-          {subtitle && <p class="mt-2 text-base-content/70 max-w-2xl">{subtitle}</p>}
+        <div class="pt-8 pb-10">
+          <h1 class="text-4xl sm:text-5xl font-semibold">{heading}</h1>
+          {subtitle && <p class="mt-3 text-base-content/70 max-w-2xl text-lg">{subtitle}</p>}
         </div>
       )}
       <slot />
     </main>
+    <footer class="border-t border-base-300 bg-base-100/60">
+      <div class="max-w-5xl mx-auto px-4 py-8 grid gap-6 sm:grid-cols-[1fr_auto] text-sm">
+        <div class="space-y-2">
+          <p class="font-display text-base font-semibold">{artist.name}</p>
+          <p class="text-base-content/60">{artist.genre} · {artist.location}</p>
+          <p><a class="link link-hover" href={`mailto:${artist.email}`}>{artist.email}</a></p>
+          <p class="flex gap-3 flex-wrap">{artist.socials.map((s) => <a class="link link-hover" href={s.url} rel="me noopener" target="_blank">{s.label}</a>)}</p>
+        </div>
+        <div class="sm:text-right space-y-2 text-base-content/60">
+          <p>© {new Date().getFullYear()} {artist.name}</p>
+          <p><a class="link link-hover" href="/tools/">Tools</a></p>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>

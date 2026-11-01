@@ -1,0 +1,17 @@
+---
+import Base from '../layouts/Base.astro'
+import { artist, bio, photos } from '../data/music.ts'
+---
+<Base title="About" heading="About" description={bio.about[0]}>
+  <div class="grid gap-10 md:grid-cols-[1fr_1.4fr] items-start">
+    <img src={photos.live.src} srcset={`${photos.live.small} 395w, ${photos.live.src} 790w`} sizes="(min-width: 768px) 35vw, 100vw" width={photos.live.width} height={photos.live.height} alt={photos.live.alt} class="w-full max-w-sm mx-auto rounded-box shadow-xl" />
+    <div class="space-y-5 text-lg leading-relaxed">
+      {bio.about.map((p) => <p>{p}</p>)}
+      <div class="pt-4 flex gap-3 flex-wrap">
+        <a href="/#listen" class="btn btn-primary">Listen</a>
+        <a href="/press/" class="btn btn-ghost">Press kit</a>
+        <a href={`mailto:${artist.email}`} class="btn btn-ghost">Email</a>
+      </div>
+    </div>
+  </div>
+</Base>

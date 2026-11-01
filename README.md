@@ -2,7 +2,7 @@
 
 Small browser tools, built with Vite and TypeScript and deployed to GitHub Pages by GitHub Actions.
 
-- `/prioritize/`: rank a list by pairwise comparison
+- `/prioritize/`: rank options by comparing two at a time (binary insertion, then a check pass that rechecks contradictions)
 - `/bodycomp/`: body fat and calorie estimates
 
 ```

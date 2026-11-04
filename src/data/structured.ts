@@ -20,7 +20,7 @@ export const graph = {
       jobTitle: 'Musician',
       homeLocation: { '@type': 'Place', name: artist.location },
       email: `mailto:${artist.email}`,
-      sameAs: artist.socials.map((s) => s.url),
+      sameAs: artist.profiles,
       memberOf: [{ '@id': `${SITE}/derivative/#band` }, { '@id': `${SITE}/better-the-never/#project` }],
     },
     {

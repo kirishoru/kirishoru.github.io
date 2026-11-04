@@ -16,6 +16,18 @@ export const artist = {
     { label: 'TikTok', url: 'https://www.tiktok.com/@calebdavidbarger' },
   ],
   handle: '@CalebDavidBarger',
+  // Official artist profiles (from Caleb, 2026-11-04; tracking parameters removed,
+  // Deezer share link resolved to its canonical artist URL). Used for structured data.
+  profiles: [
+    'https://open.spotify.com/artist/7mtpvFmaEKn1prxeAZCbB5',
+    'https://music.apple.com/us/artist/caleb-david-barger/1871011204',
+    'https://music.youtube.com/channel/UCPmr78MshiiOa2cUs79yC0g',
+    'https://www.deezer.com/artist/194457917',
+    'https://calebdavidbarger.bandcamp.com/',
+    'https://www.instagram.com/calebdavidbarger/',
+    'https://www.tiktok.com/@calebdavidbarger',
+    'https://www.facebook.com/calebdavidbarger',
+  ],
 }
 
 export const photos = {

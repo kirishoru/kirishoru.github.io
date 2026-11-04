@@ -1,6 +1,7 @@
 ---
 import '../styles/global.css'
 import { artist } from '../data/music.ts'
+import { graph } from '../data/structured.ts'
 
 interface Props {
   title: string
@@ -21,6 +22,7 @@ const nav = [
 const isActive = (href: string) => (href === '/' ? path === '/' : path.startsWith(href))
 const fullTitle = title === artist.name ? title : `${title} · ${artist.name}`
 const ogImage = new URL(image, Astro.site ?? Astro.url).href
+const canonical = new URL(Astro.url.pathname, Astro.site ?? Astro.url).href
 ---
 <!doctype html>
 <html lang="en">
@@ -29,12 +31,16 @@ const ogImage = new URL(image, Astro.site ?? Astro.url).href
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{fullTitle}</title>
     <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <meta property="og:url" content={canonical} />
     <meta property="og:title" content={fullTitle} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={ogImage} />
     <meta property="og:type" content="website" />
     <meta name="twitter:card" content="summary_large_image" />
     <link rel="icon" href="/favicon-32.png" sizes="32x32" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <script type="application/ld+json" set:html={JSON.stringify(graph)} />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
